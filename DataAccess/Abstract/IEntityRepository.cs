@@ -14,7 +14,7 @@ namespace DataAccess.Abstract
     //new() işlemi  yapabilir
     public interface IEntityRepository<T> where T : class,IEntity,new()
     {
-        //Tekrarlayan işlemleri tek bir yerden çekiyoruz 
+        
 
         List<T> GetAll(Expression<Func<T,bool>> filter=null); //select
         T Get(Expression<Func<T, bool>> filter);
@@ -22,6 +22,7 @@ namespace DataAccess.Abstract
         void Update(T entity);
         void Delete(T entity);
 
+        //Tekrarlayan işlemleri tek bir yerden çekiyoruz 
         //Yukarıdaki expression yapısıı ile aşağıdaki kodu sağlayabiliriz.
         //List<T> GetAllByCategory(int categoryId);
     }

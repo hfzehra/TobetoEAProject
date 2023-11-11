@@ -42,12 +42,23 @@ namespace DataAccess.Concrete.EntityFramework
 
         public Product Get(Expression<Func<Product, bool>> filter)
         {
-            throw new NotImplementedException();
+            //tek veri çekme
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                return context.Set<Product>().SingleOrDefault(filter);
+            }
         }
+
 
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            //toplu veri çekme 
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                return filter == null 
+                    ? context.Set<Product>().ToList() 
+                    : context.Set<Product>().Where(filter).ToList();
+            }
         }
 
        
