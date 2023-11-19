@@ -22,5 +22,7 @@ namespace Business.Abstract
 
         //void yerine IResult yazdık
         IResult Add(Product product);
+
+        //restful -> HTTP -> 
     }
 }
