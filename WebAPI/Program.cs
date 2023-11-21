@@ -11,6 +11,7 @@ namespace WebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //IoC yapýsý yerine Autfaci entegre ediyoruz
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
             builder.Host.ConfigureContainer<ContainerBuilder>(
             builder => builder.RegisterModule(new AutofacBusinessModule()));

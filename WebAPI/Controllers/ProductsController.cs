@@ -15,6 +15,7 @@ namespace WebAPI.Controllers
         //Loosely coupled -> gevşek bağımlılık
         //IoC Container-- Inversion of Control (Değişimin kontrolü)
         //AOF-> Autofac
+        //Farklı bir API  tüm konfigürasyon apinin içinde kalır. Bu yüzden bussiness katmanından çekiyoruz.
         IProductService _productService;
 
         public ProductsController(IProductService productService)

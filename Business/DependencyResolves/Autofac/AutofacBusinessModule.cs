@@ -15,8 +15,10 @@ namespace Business.DependencyResolves.Autofac
 {
     public class AutofacBusinessModule: Module
     {
+        //Load -> yükleme metotu
         protected override void Load(ContainerBuilder builder)
         {
+            //services.singletean karşılık gelir
             builder.RegisterType<ProductManager>().As<IProductService>().SingleInstance();
             builder.RegisterType<EfProductDal>().As<IProductDal>().SingleInstance();
         }
